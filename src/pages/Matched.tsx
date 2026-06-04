@@ -63,7 +63,7 @@ export const Matched: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden text-white flex flex-col">
+    <div className="relative w-full h-full bg-black overflow-hidden text-white flex flex-col">
       {/* Background Effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/80 via-black to-black pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 pointer-events-none" />

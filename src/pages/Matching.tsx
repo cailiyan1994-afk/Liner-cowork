@@ -213,7 +213,7 @@ export const Matching: React.FC = () => {
   const isFinished = currentIndex >= MOCK_HOSTS.length;
 
   return (
-    <div className="relative w-full h-screen bg-neutral-950 overflow-hidden text-white flex flex-col">
+    <div className="relative w-full h-full bg-neutral-950 overflow-hidden text-white flex flex-col">
       <StatusBar color="white" floating={true} />
       
       <main className="pt-[62px] pb-[34px] flex-1 flex flex-col overflow-hidden">
