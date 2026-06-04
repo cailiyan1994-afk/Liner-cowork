@@ -30,7 +30,7 @@ export const Home: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-screen bg-[#F4F5F6] flex flex-col font-sans overflow-hidden">
+    <div className="relative w-full h-screen bg-[#F4F5F6] flex flex-col font-sans overflow-hidden">
       <div className="bg-[#F4F5F6] relative z-20">
         {/* Top Right Decoration */}
         <div className="absolute top-0 right-0 w-[220px] h-[220px] pointer-events-none z-0 overflow-hidden">
@@ -98,91 +98,3 @@ export const Home: React.FC = () => {
              <div className="flex flex-col">
                <span className="text-[26px] font-bold text-black">$0.00</span>
                <span className="text-[13px] text-neutral-400 font-medium mt-1">本周预估收益</span>
-             </div>
-           </div>
-           <div className="pt-4 border-t border-neutral-100 flex items-center gap-1.5 text-[13px] text-neutral-500 font-medium">
-             本场直播获得钻石: <span className="text-yellow-500 flex items-center gap-1.5 font-semibold ml-0.5"><DiamondIcon/> 0</span>
-           </div>
-        </div>
-
-        {/* LIVE Journey */}
-        <div className="bg-white rounded-[14px] p-5 shadow-[0_2px_10px_rgba(0,0,0,0.03)] relative space-y-3 active:bg-neutral-50 transition-colors">
-          <div className="flex justify-between items-center">
-             <h2 className="text-[16px] font-bold text-black">主播旅程</h2>
-             <ChevronRight size={20} className="text-neutral-300 stroke-[2.5]" />
-           </div>
-           <div>
-             <div className="text-[22px] font-bold text-black mb-3">第二阶段</div>
-             <div className="flex gap-2 mb-3">
-               <HexagonCheck />
-               <HexagonCheck />
-               <HexagonEmpty />
-               <HexagonEmpty />
-             </div>
-             <p className="text-[13.5px] text-neutral-500 font-medium">再获得 2 积分即可晋级下一阶段。</p>
-           </div>
-           <div className="pt-4 border-t border-neutral-100 flex items-center gap-2 text-[13.5px] font-bold text-[#D97706]">
-             <Clock size={16} className="stroke-[2.5]" /> 赛季将在 4 天后结束
-           </div>
-        </div>
-
-        {/* Fan Club */}
-        <div className="bg-white rounded-[14px] p-5 shadow-[0_2px_10px_rgba(0,0,0,0.03)] relative active:bg-neutral-50 transition-colors">
-           <div className="flex justify-between items-center mb-2.5">
-             <div className="flex items-center gap-2">
-               <Heart size={18} className="text-neutral-400 fill-neutral-400" />
-               <h2 className="text-[16px] font-bold text-black">粉丝团</h2>
-             </div>
-             <ChevronRight size={20} className="text-neutral-300 stroke-[2.5]" />
-           </div>
-           <p className="text-[14px] text-neutral-500 font-medium leading-relaxed pr-4">
-             你有新的粉丝啦！设置专属特权来保持粉丝互动吧。
-           </p>
-        </div>
-
-        {/* LIVE recordings */}
-        <div className="bg-white rounded-[14px] p-5 shadow-[0_2px_10px_rgba(0,0,0,0.03)] relative active:bg-neutral-50 transition-colors">
-           <div className="flex justify-between items-center mb-2.5">
-             <h2 className="text-[16px] font-bold text-black">直播回放</h2>
-             <ChevronRight size={20} className="text-neutral-300 stroke-[2.5]" />
-           </div>
-           <p className="text-[14px] text-neutral-500 font-medium leading-relaxed pr-4">
-             暂无高光时刻。快去截取并发布你的精彩片段吧！
-           </p>
-        </div>
-      </main>
-
-      {/* Floating Fire Icon (Liner Entry) with Tooltip */}
-      <motion.div 
-        animate={{ y: [0, -12, 0] }}
-        transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-        className="absolute bottom-12 right-6 z-50 flex flex-col items-end"
-      >
-        <motion.div 
-          initial={{ opacity: 0, y: 10, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.5, type: "spring", stiffness: 200, damping: 20 }}
-          className="mb-3 relative cursor-pointer active:scale-95 transition-transform origin-bottom-right"
-          onClick={() => navigate('/match')}
-        >
-          <div className="bg-[#111111] text-white text-[13px] font-bold px-3.5 py-2.5 rounded-[14px] shadow-2xl border border-white/10 whitespace-nowrap flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FE2C55] shadow-[0_0_8px_rgba(254,44,85,0.8)] animate-pulse"></span>
-            遇见与你直播同频的TA
-          </div>
-          <div className="absolute -bottom-1.5 right-[26px] w-3 h-3 bg-[#111111] border-b border-r border-white/10 transform rotate-45"></div>
-        </motion.div>
-
-        <button 
-          onClick={() => navigate('/match')}
-          className="w-[64px] h-[64px] bg-gradient-to-tr from-orange-500 via-red-500 to-rose-500 rounded-full flex items-center justify-center shadow-[0_10px_25px_rgba(239,68,68,0.4)] border-[2.5px] border-white active:scale-95 transition-transform"
-        >
-          <Flame size={32} className="text-white fill-white drop-shadow-md" />
-        </button>
-      </motion.div>
-
-      <div className="bg-[#F4F5F6] relative z-20">
-        <HomeIndicator floating={false} />
-      </div>
-    </div>
-  );
-};
